@@ -17,13 +17,23 @@ pizzaForm.addEventListener('submit', function(event){
   const pizzaFlavor = pizza.value;
   const sizeValue = pizzaSize.value;
 
+  // Validación para cambiar la foto dependiendo del sabor
+  let pizzaImg;
+  if(pizzaFlavor == 'pastor') {
+    pizzaImg = 'pastor.jpeg';
+  } else if(pizzaFlavor == 'mexicana'){
+    pizzaImg = 'mexicana.jpeg';
+  } else {
+    pizzaImg = 'pizza.png';
+  }
+
   //Estamos inyectando código HTML a el elemento list (Solo funcionia usando backtips ``)
   list.innerHTML += `
     <div class="pizza-orden">
       <h3>Pidieron una pizza ${pizzaFlavor}</h3>
       <p>De tamaño ${sizeValue}</p>
       <p>Otra cosa</p>
-      <img src="pizza.png">
+      <img src="assets/img/${pizzaImg}">
       <input id="confirm-button" type="button" value="confirmar">
     </div>
   `
