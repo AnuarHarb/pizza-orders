@@ -1,45 +1,92 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Formularios</title>
+    <title>Pizzas Edgar</title>
     <meta charset="utf-8">
     <link rel="icon" href="pizza.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body>
     <header>
+      <picture class="header__img">
+        <img src="assets/img/logo.jpg" alt="Logo del tío Edgar">
+      </picture>
       <h1>Pizzas El tio Edgar</h1>
     </header>
 
 
     <main>
       <section class="pedidos">
+        <h2 class="pedidos__title">Arma tu pizza</h2>
 
-        <form id="pizza-form">
+        <form id="pizza-form" class="pedidos__pizzas">
 
-          <label for="pizza">Elige tu pizza</label>
-          <input id="pizza" class="area" type="text" name="pizza" placeholder="peperoni">
+          <section>
+            <label id="label-hawaina" class="pizza-card" for="pizza-hawaina">
+              <div class="pizza-card-info">
+                <h3 class="pizza-card__title">Hawaiana</h3>
+                <p class="pizza-card__text">Jamon, queso, piña</p>
+              </div>
+            </label>
+            <input id="pizza-hawaina" class="radio-input" type="radio" name="pizza" value="hawaiana">
 
-          <label for="size">Tamaño</label>
-          <select name="size" id="size">
-            <option value="sm">Chica</option>
-            <option value="md">Mediana</option>
-            <option value="lg">Grande</option>
-            <option value="xl">Familiar</option>
-          </select>
+            <label id="label-pastor" class="pizza-card" for="pizza-pastor">
+              <div class="pizza-card-info">
+                <h3 class="pizza-card__title">Pastor</h3>
+                <p class="pizza-card__text">Taquitos al pastor, piña, queso</p>
+              </div>
+            </label>
+            <input id="pizza-pastor" class="radio-input" type="radio" name="pizza" value="pastor">
 
-          <input type="submit" value="pide tu pizza ;D">
+            <label id="label-mexicana" class="pizza-card" for="pizza-mexicana">
+              <div class="pizza-card-info">
+                <h3 class="pizza-card__title">Mexicana</h3>
+                <p class="pizza-card__text">Chorizo, cebolla, jalapeños</p>
+              </div>
+            </label>
+            <input id="pizza-mexicana" class="radio-input" type="radio" name="pizza" value="mexicana">
+          </section>
+
+          <section class="pedidos__add">
+            <label for="size" class="pedidos__label">Tamaño:</label>
+            <select name="size" id="size" class="pedidos__select">
+              <option value="chica">Chica</option>
+              <option value="mediana">Mediana</option>
+              <option value="grande">Grande</option>
+              <option value="familiar">Familiar</option>
+            </select>
+
+            <label for="dough" class="pedidos__label">Tipo de Masa:</label>
+            <select name="dough" id="dough" class="pedidos__select">
+              <option value="original">Original</option>
+              <option value="cunchy">Crunchy</option>
+              <option value="orilla de queso">Orilla rellena de Queso</option>
+              <option value="edgar">Especial de Edgar</option>
+            </select>
+
+            <input type="submit" class="add-button" value="Agregar +">
+          </section>
+
+
         </form>
 
-      </section><section class="pizzas"></section>
+
+      </section><section class="checkout">
+        <section class="checkout__info">
+        </section>
+        <button id="order-button" class="order-button">Ordenar</button>
+      </section>
     </main>
 
     <section class="ordenes">
       <ul id="lista"></ul>
     </section>
 
-    <footer></footer>
+    <footer>
+      <p>Hecho con amor ❤️</p>
+    </footer>
 
     <script src="assets/scripts.js"></script>
 
