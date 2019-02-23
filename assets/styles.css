@@ -8,6 +8,12 @@
   --sub-family: Lato;
 }
 /*  Comentario  */
+
+@font-face {
+  font-family: 'starwars';
+  src: url('fonts/Starjedi.ttf');
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -38,7 +44,7 @@ header {
 header h1 {
   display: inline-block;
   margin: 0 20px;
-  font-family: var(--title-family);
+  font-family: starwars;
 }
 
 .pedidos {
@@ -259,4 +265,36 @@ footer {
   justify-content: center;
   height: 50px;
   background-color: var(--secondary-color);
+}
+
+
+@media (max-width:425px) {
+  header h1 {
+    color: white;
+    font-size: 16px;
+  }
+
+  .pedidos,
+  .checkout,
+  .ordenes {
+    display: block;
+    height: inherit;
+    width: 100%;
+  }
+
+  .checkout {
+    min-height: 300px;
+    padding: 40px 20px;
+  }
+
+  .pedidos__label {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .add-button {
+    display: block;
+    margin: 20px auto;
+  }
+
 }
